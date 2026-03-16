@@ -9,7 +9,7 @@
   </head>
   <body>
     <div class="session">
-      <h1>{{session.total_points}}</h1>
+      <h1>Total points: {{session.total_points}}</h1>
     </div>
 
     <p class="test">hello</p>
@@ -18,11 +18,14 @@
       <h3>{{card.name}}</h3>
       <p>{{card.points}}</p>
 
-      <form action="" method="post">
+      <form action="{% url 'change_points' card.id 'add' %}" method="post">
+        {% csrf_token %}
+        <!-- will not work without this -->
         <button>+</button>
       </form>
 
-      <form action="" method="post">
+      <form action="{% url 'change_points' card.id 'remove' %}" method="post">
+        {% csrf_token %}
         <button>-</button>
       </form>
     </table>
