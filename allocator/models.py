@@ -3,7 +3,6 @@ from django.db import models
 
 class Session(models.Model):
     total_points = models.IntegerField(default=10)
-    session_points_counter = models.IntegerField(default=10)
 
 
 class Card(models.Model):

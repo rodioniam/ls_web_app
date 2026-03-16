@@ -1,0 +1,21 @@
+<div id="card-{{ card.id }}" class="card">
+  <h3>{{ card.name }}</h3>
+  <p>{{ card.points }}</p>
+
+  <form
+    hx-post="{% url 'change_points' card.id 'add' %}"
+    hx-target="#card-{{card.id}}"
+    hx-swap="outerHTML"
+  >
+    {% csrf_token %}
+    <button>+</button>
+  </form>
+  <form
+    hx-post="{% url 'change_points' card.id 'remove' %}"
+    hx-target="#card-{{card.id}}"
+    hx-swap="outerHTML"
+  >
+    {% csrf_token %}
+    <button>-</button>
+  </form>
+</div>

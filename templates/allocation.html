@@ -6,28 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Session</title>
     <link rel="stylesheet" href="{% static 'css/alloc_style.css'%}" />
+    <script src="https://unpkg.com/htmx.org@2.0.4"></script>
   </head>
   <body>
-    <div class="session">
-      <h1>Total points: {{session.session_points_counter}}</h1>
+    <div id="points_remaining">
+      <h1>Total points: {{points_remaining}}</h1>
     </div>
 
-    {% for card in cards %}
-    <table class="card">
-      <h3>{{card.name}}</h3>
-      <p>{{card.points}}</p>
-
-      <form action="{% url 'change_points' card.id 'add' %}" method="post">
-        {% csrf_token %}
-        <!-- will not work without this -->
-        <button>+</button>
-      </form>
-
-      <form action="{% url 'change_points' card.id 'remove' %}" method="post">
-        {% csrf_token %}
-        <button>-</button>
-      </form>
-    </table>
-    {% endfor %}
+    {% for card in cards %} {% include 'card.html'%} {% endfor %}
   </body>
 </html>
