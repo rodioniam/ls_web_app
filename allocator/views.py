@@ -20,14 +20,18 @@ def change_points(request, card_id, action):
             if total_used < session.total_points:
                 card.points += 1
                 card.save()
-            # session.total_points -= 1
-            # session.save()
+
+            if session.session_points_counter > 0 and session.session_points_counter <= 10:
+                session.session_points_counter -= 1
+                session.save()
 
         if action == 'remove':
             if card.points > 0:
                 card.points -= 1
                 card.save()
-            # session.total_points += 1
-            # session.save()
+
+            if session.session_points_counter >= 0 and session.session_points_counter < 10:
+                session.session_points_counter += 1
+                session.save()
 
     return redirect('index', session_id=session.id)
