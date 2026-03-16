@@ -32,9 +32,6 @@ def change_points(request, card_id, action):
                 card.save()
 
     if request.headers.get('HX-Request'):
-        card.refresh_from_db()
-        # print(f"DEBUG card.id = {card.id}")
-        # print(f"DEBUG card.name = {card.name}")
         total_used = sum(
             c.points for c in Card.objects.filter(session=session))
         points_remaining = session.total_points - total_used
