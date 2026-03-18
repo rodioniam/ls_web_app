@@ -1,0 +1,37 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <link rel="stylesheet" href="{% static 'css/home_style.css'%}" />
+  </head>
+  <body>
+    <div class="form-container">
+      <p>Name your cards!</p>
+      <form action="" method="post">
+        <label for="fcard" class="label-card">First card:</label>
+        <input
+          type="text"
+          id="fcard"
+          name="fcard"
+          maxlength="10"
+          placeholder="max 10 chars."
+          required
+        /><br />
+        <label for="scard" class="label-card">Second card:</label>
+        <input
+          type="text"
+          id="scard"
+          name="scard"
+          maxlength="10"
+          placeholder="max 10 chars."
+          required
+        /><br />
+        {% csrf_token %}
+        <input type="submit" value="Submit" />
+      </form>
+    </div>
+  </body>
+</html>
