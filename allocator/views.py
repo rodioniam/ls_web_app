@@ -8,17 +8,19 @@ def home(request):
     if request.method == 'GET':
         return render(request, 'home.html')
     elif request.method == 'POST':
-        if any(not name for name in request.POST.values()) or any(len(name) > 10 for name in request.POST.values()):
+        fcard = request.POST['fcard']
+        scard = request.POST['scard']
+        if not fcard or not scard or len(fcard) > 10 or len(scard) > 10:
             return render(request, 'home.html')
         else:
             session = Session.objects.create()
             Card.objects.create(
                 session=session,
-                name=request.POST['fcard']
+                name=fcard
             )
             Card.objects.create(
                 session=session,
-                name=request.POST['scard']
+                name=scard
             )
         return redirect('index', session_id=session.id)
 
