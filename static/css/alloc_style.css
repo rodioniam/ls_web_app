@@ -1,0 +1,23 @@
+.style_test {
+  color: red;
+}
+
+h3 {
+  margin: 0;
+}
+
+p {
+  text-align: center;
+}
+
+.card {
+  display: inline-block;
+  border: 1px solid black;
+  margin: 10px;
+  padding: 2px;
+  box-sizing: border-box;
+}
+
+.card-button {
+  display: inline;
+}
