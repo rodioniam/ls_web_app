@@ -4,6 +4,25 @@ from django.http import HttpResponse
 from .models import Card, Session
 
 
+def home(request):
+    if request.method == 'GET':
+        return render(request, 'home.html')
+    elif request.method == 'POST':
+        if any(not name for name in request.POST.values()) or any(len(name) > 10 for name in request.POST.values()):
+            return render(request, 'home.html')
+        else:
+            session = Session.objects.create()
+            Card.objects.create(
+                session=session,
+                name=request.POST['fcard']
+            )
+            Card.objects.create(
+                session=session,
+                name=request.POST['scard']
+            )
+        return redirect('index', session_id=session.id)
+
+
 def index(request, session_id):
     session = get_object_or_404(Session, id=session_id)
     cards = Card.objects.filter(session=session)
