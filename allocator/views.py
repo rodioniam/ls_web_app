@@ -65,3 +65,15 @@ def change_points(request, card_id, action):
         return HttpResponse(card_html + counter_html)
 
     return redirect('index', session_id=session.id)
+
+
+def reset_points(request, session_id):
+    session = get_object_or_404(Session, id=session_id)
+    cards = Card.objects.filter(session=session)
+
+    if request.method == "POST":
+        for card in cards:
+            card.points = 0
+            card.save()
+
+    return redirect('index', session_id=session.id)

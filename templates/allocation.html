@@ -13,7 +13,14 @@
     <div id="points_remaining">
       <h1>Total points: {{points_remaining}}</h1>
     </div>
-
-    {% for card in cards %} {% include 'card.html'%} {% endfor %}
+    <div class="card-container">
+      {% for card in cards %} {% include 'card.html'%} {% endfor %}
+    </div>
+    <div class="reset-container">
+      <form action="{% url 'reset_points' session.id%}" method="post">
+        {% csrf_token %}
+        <input type="submit" value="Reset points" />
+      </form>
+    </div>
   </body>
 </html>

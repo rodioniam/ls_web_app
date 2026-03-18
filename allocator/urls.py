@@ -5,5 +5,7 @@ urlpatterns = [
     path('', views.home, name='home'),
     path('session/<int:session_id>/', views.index, name='index'),
     path('card/<int:card_id>/<str:action>/',
-         views.change_points, name='change_points')
+         views.change_points, name='change_points'),
+    path('session/<int:session_id>/reset/',
+         views.reset_points, name='reset_points')
 ]
