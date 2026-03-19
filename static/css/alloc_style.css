@@ -1,7 +1,3 @@
-.style_test {
-  color: red;
-}
-
 h3 {
   margin: 0;
 }
@@ -10,12 +6,37 @@ p {
   text-align: center;
 }
 
+.card-container {
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-areas: "position-left card-1 card-2 position-right";
+  align-items: center;
+  justify-content: center;
+}
+
+.card-1 {
+  grid-area: card-1;
+}
+
+.card-2 {
+  grid-area: card-2;
+}
+
+.position-left {
+  grid-area: position-left;
+}
+
+.position-right {
+  grid-area: position-right;
+}
+
 .card {
   display: inline-block;
   border: 1px solid black;
   margin: 10px;
   padding: 2px;
   box-sizing: border-box;
+  text-align: center;
 }
 
 .card-button {
