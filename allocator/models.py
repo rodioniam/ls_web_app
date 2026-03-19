@@ -12,3 +12,16 @@ class Card(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class Multiplier(models.Model):
+    name = models.CharField(max_length=100)
+    value = models.FloatField()
+
+    def __str__(self):
+        return self.name
+
+
+class CardMultiplier(models.Model):
+    parent_card = models.ForeignKey(Card, on_delete=models.CASCADE)
+    assigned_mults = models.ForeignKey(Multiplier, on_delete=models.CASCADE)
