@@ -3,3 +3,5 @@ from . import models
 
 admin.site.register(models.Card)
 admin.site.register(models.Session)
+admin.site.register(models.Multiplier)
+admin.site.register(models.CardMultiplier)
