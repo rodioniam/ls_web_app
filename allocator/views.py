@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.template.loader import render_to_string
 from django.http import HttpResponse
-from .models import Card, Session
+from .models import Card, Session, Multiplier
 
 
 def home(request):
@@ -28,10 +28,21 @@ def home(request):
 def index(request, session_id):
     session = get_object_or_404(Session, id=session_id)
     cards = Card.objects.filter(session=session)
-    total_used = sum(
-        c.points for c in Card.objects.filter(session=session))
+    card_1 = cards[0]
+    card_2 = cards[1]
+    multipliers = Multiplier.objects.all()
+    total_used = sum(c.points for c in cards)
     points_remaining = session.total_points - total_used
-    return render(request, 'allocation.html', {'cards': cards, 'session': session, 'points_remaining': points_remaining})
+    return render(request,
+                  'allocation.html',
+                  {
+                      'card_1': card_1,
+                      'card_2': card_2,
+                      'session': session,
+                      'points_remaining': points_remaining,
+                      'multipliers': multipliers
+                  }
+                  )
 
 
 def change_points(request, card_id, action):
