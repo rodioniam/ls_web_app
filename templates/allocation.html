@@ -16,24 +16,32 @@
     <div class="card-container">
       <div class="multipliers position-left">
         <div class="m-container">
-          {% for multiplier in multipliers %}
-          <form action="" method="post">
-            <input type="checkbox" name="left-card" />
-            <label for="left-card">{{multiplier.name}}</label>
-          </form>
-          {% endfor %}
+          <dl>
+            {% for multiplier in multipliers %}
+            <dd>
+              <form action="" method="post" class="multiplier-field">
+                <input type="checkbox" name="left-card" />
+                <label for="left-card">{{multiplier.name}}</label>
+              </form>
+            </dd>
+            {% endfor %}
+          </dl>
         </div>
       </div>
       <div class="card card-1">{% include "card.html" with card=card_1 %}</div>
       <div class="card card-2">{% include "card.html" with card=card_2 %}</div>
       <div class="multipliers position-right">
         <div class="m-container">
-          {% for multiplier in multipliers %}
-          <form action="" method="post">
-            <input type="checkbox" name="right-card" />
-            <label for="right-card">{{multiplier.name}}</label>
-          </form>
-          {% endfor %}
+          <dl>
+            {% for multiplier in multipliers %}
+            <dd>
+              <form action="" method="post" class="multiplier-field">
+                <input type="checkbox" name="right-card" />
+                <label for="right-card">{{multiplier.name}}</label>
+              </form>
+            </dd>
+            {% endfor %}
+          </dl>
         </div>
       </div>
     </div>
