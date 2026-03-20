@@ -19,8 +19,21 @@
           <dl>
             {% for multiplier in multipliers %}
             <dd>
-              <form action="" method="post" class="multiplier-field">
+              <form
+                hx-post="{% url 'assign_multiplier' session.id %}"
+                hx-trigger="change"
+                hx-target="#card-{{card_1.id}}"
+                hx-swap="outerHTML"
+                class="multiplier-field"
+              >
+                {% csrf_token %}
                 <input type="checkbox" name="left-card" />
+                <input type="hidden" name="card_id" value="{{card_1.id}}" />
+                <input
+                  type="hidden"
+                  name="multiplier_id"
+                  value="{{multiplier.id}}"
+                />
                 <label for="left-card">{{multiplier.name}}</label>
               </form>
             </dd>
@@ -28,15 +41,32 @@
           </dl>
         </div>
       </div>
-      <div class="card card-1">{% include "card.html" with card=card_1 %}</div>
-      <div class="card card-2">{% include "card.html" with card=card_2 %}</div>
+      <div class="card card-1">
+        {% include "card.html" with card=card_1 points=card_1_result%}
+      </div>
+      <div class="card card-2">
+        {% include "card.html" with card=card_2 points=card_2_result%}
+      </div>
       <div class="multipliers position-right">
         <div class="m-container">
           <dl>
             {% for multiplier in multipliers %}
             <dd>
-              <form action="" method="post" class="multiplier-field">
+              <form
+                hx-post="{% url 'assign_multiplier' session.id %}"
+                hx-trigger="change"
+                hx-target="#card-{{card_2.id}}"
+                hx-swap="outerHTML"
+                class="multiplier-field"
+              >
+                {% csrf_token %}
                 <input type="checkbox" name="right-card" />
+                <input type="hidden" name="card_id" value="{{card_2.id}}" />
+                <input
+                  type="hidden"
+                  name="multiplier_id"
+                  value="{{multiplier.id}}"
+                />
                 <label for="right-card">{{multiplier.name}}</label>
               </form>
             </dd>

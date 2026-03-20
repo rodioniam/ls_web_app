@@ -1,5 +1,5 @@
 <div id="card-{{ card.id }}">
-  <p class="card-points">{{ card.points }}</p>
+  <p class="card-points">{{ points|floatformat:1 }}</p>
 
   <h3 class="card-name">{{ card.name }}</h3>
   <div class="buttons">
