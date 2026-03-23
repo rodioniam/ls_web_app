@@ -17,6 +17,7 @@ class Card(models.Model):
 class Multiplier(models.Model):
     name = models.CharField(max_length=100)
     value = models.FloatField()
+    description = models.CharField(max_length=200, blank=True)
 
     def __str__(self):
         return self.name
