@@ -18,6 +18,7 @@ class Multiplier(models.Model):
     name = models.CharField(max_length=100)
     value = models.FloatField()
     description = models.CharField(max_length=200, blank=True)
+    is_positive = models.BooleanField(default=True)
 
     def __str__(self):
         return self.name

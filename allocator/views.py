@@ -38,9 +38,16 @@ def index(request, session_id):
     card_1_result = card_1.points
     card_2_result = card_2.points
     for m in card_1_multipliers:
-        card_1_result *= m.assigned_mults.value
+        if m.assigned_mults.is_positive:
+            card_1_result += m.assigned_mults.value
+        else:
+            card_1_result -= m.assigned_mults.value
+
     for m in card_2_multipliers:
-        card_2_result += m.assigned_mults.value
+        if m.assigned_mults.is_positive:
+            card_2_result += m.assigned_mults.value
+        else:
+            card_2_result -= m.assigned_mults.value
 
     total_used = sum(c.points for c in cards)
     points_remaining = session.total_points - total_used
@@ -86,7 +93,10 @@ def change_points(request, card_id, action):
         card_result = card.points
 
         for m in card_multipliers:
-            card_result *= m.assigned_mults.value
+            if m.assigned_mults.is_positive:
+                card_result += m.assigned_mults.value
+            else:
+                card_result -= m.assigned_mults.value
 
         card_html = render_to_string(
             'card.html', {'card': card, 'points': card_result}, request=request)
@@ -125,9 +135,14 @@ def assign_multiplier(request, session_id):
         )
         card_multipliers = CardMultiplier.objects.filter(parent_card=card)
         card_result = card.points
+
         for m in card_multipliers:
-            card_result *= m.assigned_mults.value
+            if m.assigned_mults.is_positive:
+                card_result += m.assigned_mults.value
+            else:
+                card_result -= m.assigned_mults.value
         return render(request, 'card.html', {'card': card, 'points': card_result})
+
     else:
         CardMultiplier.objects.filter(
             parent_card=card,
@@ -136,6 +151,11 @@ def assign_multiplier(request, session_id):
 
         card_multipliers = CardMultiplier.objects.filter(parent_card=card)
         card_result = card.points
+
         for m in card_multipliers:
-            card_result *= m.assigned_mults.value
+            if m.assigned_mults.is_positive:
+                card_result += m.assigned_mults.value
+            else:
+                card_result -= m.assigned_mults.value
+
         return render(request, 'card.html', {'card': card, 'points': card_result})
