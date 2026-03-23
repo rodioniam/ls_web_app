@@ -1,20 +1,25 @@
-h3 {
-  margin: 0;
+body {
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 dl {
-  width: 120px;
-  height: 135px;
+  width: 220px;
+  height: 185px;
   overflow: auto;
   border: 2px solid black;
   border-radius: 10px;
+  margin: 0;
 }
 
 dd {
   margin: 0;
 }
 
-.card-container {
+.base-container {
   display: grid;
   grid-template-rows: auto;
   grid-template-areas: "position-left card-1 card-2 position-right";
@@ -40,9 +45,42 @@ dd {
 
 .multiplier-field {
   border: 1px solid black;
-  margin: 10px;
+  margin: 4.9%;
   padding: 2px;
   border-radius: 5px;
+}
+
+[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+}
+
+label {
+  display: grid;
+  grid-template-columns: 20% 78%;
+  grid-template-areas: "m-value m-info";
+  /* gap: 5%; */
+}
+
+.m-value {
+  justify-self: center;
+  align-self: center;
+  font-size: 1.6rem;
+}
+
+.m-info {
+  justify-items: end;
+}
+
+.m-name {
+  margin: 0;
+}
+
+.m-description {
+  margin-top: 1%;
+  margin-bottom: 1%;
 }
 
 .card {
@@ -80,17 +118,10 @@ dd {
 }
 
 .card-name {
+  margin: 0;
   font-size: 2rem;
 }
 
 .card-button {
   display: inline;
-}
-
-.reset-container {
-  text-align: center;
-}
-
-#points_remaining {
-  text-align: center;
 }
