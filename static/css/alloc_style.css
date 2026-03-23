@@ -4,6 +4,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  font-family: "Pixelify Sans", sans-serif;
 }
 
 dl {
@@ -67,7 +68,7 @@ label {
 .m-value {
   justify-self: center;
   align-self: center;
-  font-size: 1.6rem;
+  font-size: 1.5rem;
 }
 
 .m-info {
@@ -76,11 +77,15 @@ label {
 
 .m-name {
   margin: 0;
+  font-weight: 400;
 }
 
 .m-description {
   margin-top: 1%;
   margin-bottom: 1%;
+  font-weight: 200;
+  font-size: small;
+  opacity: 0.3;
 }
 
 .card {
@@ -104,24 +109,32 @@ label {
   gap: 20px;
   flex-direction: column;
   flex-grow: 1;
+  width: 36%;
 }
 
 .card-points {
   margin-bottom: auto;
-  margin-top: 100%;
+  margin-top: 60%;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   flex-grow: 0.5;
-  font-weight: 700;
+  font-weight: 500;
   font-size: 4rem;
 }
 
 .card-name {
   margin: 0;
-  font-size: 2rem;
+  font-size: 1.6rem;
+  font-weight: 400;
+  text-align: center;
 }
 
 .card-button {
   display: inline;
+}
+
+#points_remaining {
+  font-weight: 600;
+  font-size: large;
 }
