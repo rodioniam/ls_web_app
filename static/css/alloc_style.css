@@ -50,6 +50,12 @@ dd {
   padding: 2px;
   border-radius: 5px;
 }
+.positive {
+  background-color: rgba(80, 139, 101, 0.4);
+}
+.negative {
+  background-color: rgba(225, 60, 54, 0.4);
+}
 
 [type="checkbox"] {
   position: absolute;
@@ -60,7 +66,7 @@ dd {
 
 label {
   display: grid;
-  grid-template-columns: 20% 78%;
+  grid-template-columns: 30% 68%;
   grid-template-areas: "m-value m-info";
   /* gap: 5%; */
 }
