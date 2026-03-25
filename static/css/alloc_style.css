@@ -9,11 +9,13 @@ body {
 
 dl {
   width: 220px;
-  height: 185px;
+  height: 85%;
   overflow: auto;
-  border: 2px solid black;
+  /* border: 2px solid black; */
   border-radius: 10px;
   margin: 0;
+  justify-content: center;
+  margin-top: 15%;
 }
 
 dd {
@@ -70,6 +72,18 @@ label {
   grid-template-columns: 30% 68%;
   grid-template-areas: "m-value m-info";
   /* gap: 5%; */
+}
+
+.m-container {
+  display: flex;
+  justify-content: space-around;
+  height: 80%;
+  width: 260px;
+  background-image: url("../art/mult_bg.PNG");
+  image-rendering: pixelated;
+  background-repeat: no-repeat;
+  background-size: contain;
+  align-content: center;
 }
 
 .m-value {
