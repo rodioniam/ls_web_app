@@ -8,13 +8,12 @@ body {
 }
 
 dl {
-  width: 220px;
+  width: 230px;
   height: 85%;
   overflow: auto;
   /* border: 2px solid black; */
   border-radius: 10px;
   margin: 0;
-  justify-content: center;
   margin-top: 15%;
 }
 
@@ -48,16 +47,21 @@ dd {
 }
 
 .multiplier-field {
-  border: 1px solid black;
-  margin: 4.9%;
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: 4.9%;
+  margin-bottom: 4.9%;
   padding: 2px;
-  border-radius: 5px;
+  image-rendering: pixelated;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .positive {
-  background-color: rgba(80, 139, 101, 0.4);
+  background-image: url("../art/m_info_pos_bg.png");
 }
 .negative {
-  background-color: rgba(225, 60, 54, 0.4);
+  background-image: url("../art/m_info_neg_bg.png");
 }
 
 [type="checkbox"] {
@@ -77,12 +81,12 @@ label {
 .m-container {
   display: flex;
   justify-content: space-around;
-  height: 80%;
-  width: 260px;
-  background-image: url("../art/mult_bg.PNG");
+  height: 90%;
+  width: 280px;
+  background-image: url("../art/m_base_bg.PNG");
   image-rendering: pixelated;
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: cover;
   align-content: center;
 }
 
@@ -121,7 +125,7 @@ label {
   margin: 10%;
   padding: 2px;
   box-sizing: border-box;
-  background-image: url("../art/card_base.png");
+  background-image: url("../art/card_base_2.png");
   image-rendering: pixelated;
   background-repeat: no-repeat;
   background-size: cover;
