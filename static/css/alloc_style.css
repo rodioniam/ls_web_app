@@ -5,20 +5,39 @@ body {
   justify-content: center;
   align-items: center;
   font-family: "Pixelify Sans", sans-serif;
-}
-
-dl {
-  width: 230px;
-  height: 85%;
-  overflow: auto;
-  /* border: 2px solid black; */
-  border-radius: 10px;
-  margin: 0;
-  margin-top: 15%;
+  background-image: url("../art/main_bg.png");
+  image-rendering: pixelated;
+  background-size: 50% 50%;
 }
 
 dd {
   margin: 0;
+}
+
+.base-bg {
+  box-sizing: content-box;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  width: 100%;
+  height: 50%;
+}
+
+.base-bg > * {
+  grid-column-start: 1;
+  grid-row-start: 1;
+}
+
+.img-container {
+  height: 100%;
+  width: 70%;
+  filter: drop-shadow(0px 0px 10px);
+}
+
+img {
+  image-rendering: pixelated;
+  width: 100%;
+  height: 100%;
 }
 
 .base-container {
@@ -28,6 +47,7 @@ dd {
   grid-template-areas: "position-left card-1 card-2 position-right";
   align-items: center;
   justify-items: center;
+  margin: 2%;
 }
 
 .card-1 {
@@ -81,13 +101,24 @@ label {
 .m-container {
   display: flex;
   justify-content: space-around;
+  align-items: center;
   height: 90%;
-  width: 280px;
+  width: 275px;
+
   background-image: url("../art/m_base_bg.PNG");
   image-rendering: pixelated;
   background-repeat: no-repeat;
   background-size: cover;
-  align-content: center;
+  filter: drop-shadow(5px 5px 10px);
+}
+
+dl {
+  width: 225px;
+  height: 83%;
+  overflow: auto;
+  border-radius: 10px;
+  margin: 0;
+  margin-top: 12%;
 }
 
 .m-value {
@@ -129,6 +160,7 @@ label {
   image-rendering: pixelated;
   background-repeat: no-repeat;
   background-size: cover;
+  filter: drop-shadow(0px 0px 5px);
 }
 
 .card-info {
@@ -186,4 +218,10 @@ button {
 #points_remaining {
   font-weight: 600;
   font-size: large;
+}
+
+.reset-container {
+  align-self: end;
+  margin: 2%;
+  filter: drop-shadow(0px 0px);
 }
