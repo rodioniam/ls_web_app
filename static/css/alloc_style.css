@@ -10,10 +10,6 @@ body {
   background-size: 50% 50%;
 }
 
-dd {
-  margin: 0;
-}
-
 .base-bg {
   box-sizing: content-box;
   display: grid;
@@ -43,11 +39,13 @@ img {
 .base-container {
   display: grid;
   grid-template-rows: auto;
-  grid-template-columns: 1fr 1.2fr 1.2fr 1fr;
+  grid-template-columns: 1fr 1.15fr 1.15fr 1fr;
   grid-template-areas: "position-left card-1 card-2 position-right";
   align-items: center;
   justify-items: center;
   margin: 2%;
+  height: 80%;
+  width: 66%;
 }
 
 .card-1 {
@@ -101,24 +99,28 @@ label {
 .m-container {
   display: flex;
   justify-content: space-around;
-  align-items: center;
+  align-items: start;
   height: 90%;
-  width: 275px;
+  width: 95%;
 
   background-image: url("../art/m_base_bg.PNG");
   image-rendering: pixelated;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: contain;
   filter: drop-shadow(5px 5px 10px);
 }
 
 dl {
-  width: 225px;
-  height: 83%;
+  width: 80%;
+  height: 80%;
   overflow: auto;
   border-radius: 10px;
   margin: 0;
-  margin-top: 12%;
+  margin-top: 15.5%;
+}
+
+dd {
+  margin: 0;
 }
 
 .m-value {
@@ -149,17 +151,17 @@ dl {
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  width: 240px;
-  height: 300px;
+  width: 75%;
+  height: 80%;
   /* border: 1px solid black; */
   border-radius: 20px;
-  margin: 10%;
+  /* margin: 10%; */
   padding: 2px;
   box-sizing: border-box;
   background-image: url("../art/card_base_2.png");
   image-rendering: pixelated;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: contain;
   filter: drop-shadow(0px 0px 5px);
 }
 
