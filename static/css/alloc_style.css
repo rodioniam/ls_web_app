@@ -10,11 +10,6 @@ body {
   background-size: 50% 50%;
 }
 
-.test-text {
-  color: blue;
-  filter: drop-shadow(0 0 0);
-}
-
 .base-bg {
   box-sizing: content-box;
   display: grid;
@@ -31,7 +26,7 @@ body {
 
 .img-container {
   height: 100%;
-  width: 73%;
+  width: 85%;
   filter: drop-shadow(0px 0px 10px);
 }
 
@@ -44,13 +39,13 @@ img {
 .base-container {
   display: grid;
   grid-template-rows: auto;
-  grid-template-columns: 1.05fr 1.15fr 1.15fr 1.05fr;
-  grid-template-areas: "position-left card-1 card-2 position-right";
+  grid-template-columns: 1.5fr 1.5fr 0.5fr 1.5fr 1.5fr;
+  grid-template-areas: "position-left card-1 empty card-2 position-right";
   align-items: center;
   justify-items: center;
-  margin: 2%;
+  margin: 1%;
   height: 80%;
-  width: 66%;
+  width: 76%;
 }
 
 .card-1 {
@@ -73,10 +68,10 @@ img {
   display: flex;
   justify-content: space-around;
   align-items: start;
-  height: 90%;
+  height: 85%;
   width: 100%;
 
-  background-image: url("../art/m_base_bg.PNG");
+  background-image: url("../art/m_base_bg_2.PNG");
   image-rendering: pixelated;
   background-repeat: no-repeat;
   background-size: contain;
@@ -84,12 +79,13 @@ img {
 }
 
 dl {
-  width: 80%;
+  width: 82%;
   height: 80%;
   overflow: auto;
   border-radius: 10px;
   margin: 0;
-  margin-top: 15.5%;
+  margin-top: 15%;
+  /* margin-bottom: 5%; */
 }
 
 ::-webkit-scrollbar {
@@ -117,7 +113,6 @@ dd {
   margin-top: 4.9%;
   margin-bottom: 4.9%;
   padding: 2px;
-  /* padding-right: 20%; */
 
   image-rendering: pixelated;
   background-repeat: no-repeat;
@@ -172,12 +167,12 @@ label {
 
   height: 80%;
   width: 100%;
-  /* margin-right: 5%; */
   margin-left: 6%;
 }
 
 .info {
   margin-right: 2%;
+  padding-top: 2%;
 
   height: 100%;
   width: 100%;
@@ -191,7 +186,7 @@ label {
 }
 
 .info > * {
-  width: 90%;
+  width: 92%;
   text-align: end;
 }
 
@@ -199,11 +194,11 @@ label {
   margin: 0;
   margin-right: 5%;
   font-weight: 400;
+  font-size: 1.2em;
 }
 
 .m-description {
   margin-top: 1%;
-  margin-bottom: 1%;
   font-weight: 200;
   font-size: 0.8em;
   opacity: 0.3;
@@ -214,7 +209,7 @@ label {
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  width: 85%;
+  width: 90%;
   height: 90%;
   border-radius: 20px;
   padding: 2px;
