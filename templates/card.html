@@ -1,7 +1,11 @@
 <div id="card-{{ card.id }}" class="card-info">
   <p class="card-points">{{ points|floatformat:1 }}</p>
 
-  <h3 class="card-name">{{ card.name }}</h3>
+  <h3
+    class="card-name {% if card.name|length <= 4%}short{%else%}long {%endif%}"
+  >
+    {{ card.name }}
+  </h3>
   <div class="buttons">
     <form
       hx-post="{% url 'change_points' card.id 'add' %}"
