@@ -10,6 +10,11 @@ body {
   background-size: 50% 50%;
 }
 
+.test-text {
+  color: blue;
+  filter: drop-shadow(0 0 0);
+}
+
 .base-bg {
   box-sizing: content-box;
   display: grid;
@@ -153,43 +158,76 @@ dd {
   align-items: center;
   width: 75%;
   height: 80%;
-  /* border: 1px solid black; */
   border-radius: 20px;
-  /* margin: 10%; */
   padding: 2px;
   box-sizing: border-box;
+
   background-image: url("../art/card_base_2.png");
   image-rendering: pixelated;
   background-repeat: no-repeat;
   background-size: contain;
+
   filter: drop-shadow(0px 0px 5px);
 }
 
 .card-info {
   display: flex;
-  /* justify-content: space-between; */
   align-items: center;
+  gap: 5%;
   flex-direction: column;
   flex-grow: 1;
   width: 90%;
 }
 
 .card-points {
-  margin-top: 20%;
-  margin-bottom: 5%;
+  width: 60%;
+  margin-top: 22%;
+  margin-bottom: 1%;
+  align-items: center;
+
   display: flex;
   flex-direction: column;
   flex-grow: 0.2;
+  justify-content: space-around;
+
   font-weight: 500;
-  font-size: 4rem;
+  font-size: 4em;
+
+  background-image: url("../art/card_points_bg.PNG");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+
+  filter: drop-shadow(1px 1px 5px);
 }
 
 .card-name {
-  flex-grow: 0.3;
+  box-sizing: content-box;
+  flex-grow: 0.2;
+
+  height: 6%;
+
   margin: 0;
-  font-size: 1.6rem;
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-top: 4%;
+
+  font-size: 1.6em;
   font-weight: 400;
+
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  filter: drop-shadow(1px 1px 5px);
+}
+.long {
   text-align: center;
+  width: 37%;
+  background-image: url("../art/card_name_long.PNG");
+  background-size: 100% 80%;
+}
+.short {
+  background-image: url("../art/card_name_short.PNG");
 }
 
 .buttons {
@@ -218,8 +256,25 @@ button {
 }
 
 #points_remaining {
-  font-weight: 600;
-  font-size: large;
+  padding: 1.5%;
+  margin-bottom: 1%;
+
+  box-sizing: content-box;
+  font-weight: 400;
+  font-size: 2rem;
+  text-align: center;
+
+  background-image: url("../art/points_counter_bg.PNG");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  image-rendering: pixelated;
+
+  filter: drop-shadow(1px 1px 5px);
+}
+
+p {
+  margin: 0;
 }
 
 .reset-container {
