@@ -49,12 +49,16 @@
                 />
                 <label for="left-card-{{multiplier.id}}">
                   <div class="m-value">
-                    {% if multiplier.is_positive %} + {% else %} - {% endif %}
-                    {{multiplier.value }}
+                    <p class="value">
+                      {% if multiplier.is_positive %} + {% else %} - {% endif %}
+                      {{multiplier.value }}
+                    </p>
                   </div>
                   <div class="m-info">
-                    <h3 class="m-name">{{multiplier.name}}</h3>
-                    <p class="m-description">{{ multiplier.description }}.</p>
+                    <div class="info">
+                      <h3 class="m-name">{{multiplier.name}}</h3>
+                      <p class="m-description">{{ multiplier.description }}.</p>
+                    </div>
                   </div>
                 </label>
               </form>
@@ -94,12 +98,16 @@
                 />
                 <label for="right-card-{{multiplier.id}}">
                   <div class="m-value">
-                    {% if multiplier.is_positive %} + {% else %} - {% endif %}
-                    {{multiplier.value }}
+                    <p class="value">
+                      {% if multiplier.is_positive %} + {% else %} - {% endif %}
+                      {{multiplier.value }}
+                    </p>
                   </div>
                   <div class="m-info">
-                    <h3 class="m-name">{{multiplier.name}}</h3>
-                    <p class="m-description">{{ multiplier.description }}.</p>
+                    <div class="info">
+                      <h3 class="m-name">{{multiplier.name}}</h3>
+                      <p class="m-description">{{ multiplier.description }}.</p>
+                    </div>
                   </div>
                 </label>
               </form>
