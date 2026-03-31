@@ -19,101 +19,109 @@
       <p>{{points_remaining}}</p>
     </div>
     <div class="base-bg">
-      <div class="img-container">
+      {% comment %} <div class="img-container">
         <img src="{% static "art/base_bg.png" %}" alt="" />
-      </div>
+      </div> {% endcomment %}
       <div class="base-container">
-        <div class="m-container position-left">
-          <dl>
-            {% for multiplier in multipliers %}
-            <dd>
-              <form
-                class="multiplier-field {% if multiplier.is_positive%}positive{% else %}negative{%endif%}"
-              >
-                {% csrf_token %}
-                <input type="hidden" name="card_id" value="{{card_1.id}}" />
-                <input
-                  type="hidden"
-                  name="multiplier_id"
-                  value="{{multiplier.id}}"
-                />
-                <input
-                  type="checkbox"
-                  id="left-card-{{multiplier.id}}"
-                  name="left-card"
-                  hx-post="{% url 'assign_multiplier' session.id %}"
-                  hx-trigger="change"
-                  hx-target="#card-{{card_1.id}}"
-                  hx-swap="outerHTML"
-                  hx-include="closest form"
-                />
-                <label for="left-card-{{multiplier.id}}">
-                  <div class="m-value">
-                    <p class="value">
-                      {% if multiplier.is_positive %} + {% else %} - {% endif %}
-                      {{multiplier.value }}
-                    </p>
-                  </div>
-                  <div class="m-info">
-                    <div class="info">
-                      <p class="m-name">{{multiplier.name}}</p>
-                      <p class="m-description">{{ multiplier.description }}.</p>
+        <div class="element-container position-left">
+          <div class="m-container">
+            <dl>
+              {% for multiplier in multipliers %}
+              <dd>
+                <form
+                  class="multiplier-field {% if multiplier.is_positive%}positive{% else %}negative{%endif%}"
+                >
+                  {% csrf_token %}
+                  <input type="hidden" name="card_id" value="{{card_1.id}}" />
+                  <input
+                    type="hidden"
+                    name="multiplier_id"
+                    value="{{multiplier.id}}"
+                  />
+                  <input
+                    type="checkbox"
+                    id="left-card-{{multiplier.id}}"
+                    name="left-card"
+                    hx-post="{% url 'assign_multiplier' session.id %}"
+                    hx-trigger="change"
+                    hx-target="#card-{{card_1.id}}"
+                    hx-swap="outerHTML"
+                    hx-include="closest form"
+                  />
+                  <label for="left-card-{{multiplier.id}}">
+                    <div class="m-value">
+                      <p class="value">
+                        {% if multiplier.is_positive %} + {% else %} - {% endif %}
+                        {{multiplier.value }}
+                      </p>
                     </div>
-                  </div>
-                </label>
-              </form>
-            </dd>
-            {% endfor %}
-          </dl>
-        </div>
-        <div class="card card-1">
-          {% include "card.html" with card=card_1 points=card_1_result%}
-        </div>
-        <div class="card card-2">
-          {% include "card.html" with card=card_2 points=card_2_result%}
-        </div>
-        <div class="m-container position-right">
-          <dl>
-            {% for multiplier in multipliers %}
-            <dd>
-              <form
-                class="multiplier-field {% if multiplier.is_positive%}positive{% else %}negative{%endif%}"
-              >
-                {% csrf_token %}
-                <input type="hidden" name="card_id" value="{{card_2.id}}" />
-                <input
-                  type="hidden"
-                  name="multiplier_id"
-                  value="{{multiplier.id}}"
-                />
-                <input
-                  type="checkbox"
-                  id="right-card-{{multiplier.id}}"
-                  name="right-card"
-                  hx-post="{% url 'assign_multiplier' session.id %}"
-                  hx-trigger="change"
-                  hx-target="#card-{{card_2.id}}"
-                  hx-swap="outerHTML"
-                  hx-include="closest form"
-                />
-                <label for="right-card-{{multiplier.id}}">
-                  <div class="m-value">
-                    <p class="value">
-                      {% if multiplier.is_positive %} + {% else %} - {% endif %}
-                      {{multiplier.value }}
-                    </p>
-                  </div>
-                  <div class="m-info">
-                    <div class="info">
-                      <h3 class="m-name">{{multiplier.name}}</h3>
-                      <p class="m-description">{{ multiplier.description }}.</p>
+                    <div class="m-info">
+                      <div class="info">
+                        <p class="m-name">{{multiplier.name}}</p>
+                        <p class="m-description">{{ multiplier.description }}.</p>
+                      </div>
                     </div>
-                  </div>
-                </label>
-              </form>
-            </dd>
-            {% endfor %}
-          </dl>
+                  </label>
+                </form>
+              </dd>
+              {% endfor %}
+            </dl>
+          </div>
+        </div>
+        <div class="element-container card-1">
+          <div class="card">
+            {% include "card.html" with card=card_1 points=card_1_result%}
+          </div>
+        </div>
+        <div class="element-container card-2">
+          <div class="card">
+            {% include "card.html" with card=card_2 points=card_2_result%}
+          </div>
+        </div>
+        <div class="element-container position-right">
+          <div class="m-container">
+            <dl>
+              {% for multiplier in multipliers %}
+              <dd>
+                <form
+                  class="multiplier-field {% if multiplier.is_positive%}positive{% else %}negative{%endif%}"
+                >
+                  {% csrf_token %}
+                  <input type="hidden" name="card_id" value="{{card_2.id}}" />
+                  <input
+                    type="hidden"
+                    name="multiplier_id"
+                    value="{{multiplier.id}}"
+                  />
+                  <input
+                    type="checkbox"
+                    id="right-card-{{multiplier.id}}"
+                    name="right-card"
+                    hx-post="{% url 'assign_multiplier' session.id %}"
+                    hx-trigger="change"
+                    hx-target="#card-{{card_2.id}}"
+                    hx-swap="outerHTML"
+                    hx-include="closest form"
+                  />
+                  <label for="right-card-{{multiplier.id}}">
+                    <div class="m-value">
+                      <p class="value">
+                        {% if multiplier.is_positive %} + {% else %} - {% endif %}
+                        {{multiplier.value }}
+                      </p>
+                    </div>
+                    <div class="m-info">
+                      <div class="info">
+                        <h3 class="m-name">{{multiplier.name}}</h3>
+                        <p class="m-description">{{ multiplier.description }}.</p>
+                      </div>
+                    </div>
+                  </label>
+                </form>
+              </dd>
+              {% endfor %}
+            </dl>
+          </div>
         </div>
       </div>
       <div class="reset-container">

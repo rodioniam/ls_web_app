@@ -2,7 +2,7 @@ body {
   min-height: 90vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
   font-family: "Pixelify Sans", sans-serif;
   background-image: url("../art/main_bg.png");
@@ -11,6 +11,7 @@ body {
 }
 
 .base-bg {
+  flex-grow: 1;
   box-sizing: content-box;
   display: grid;
   justify-items: center;
@@ -25,8 +26,8 @@ body {
 }
 
 .img-container {
-  height: 100%;
-  width: 85%;
+  height: 90%;
+  width: 90%;
   filter: drop-shadow(0px 0px 10px);
 }
 
@@ -38,14 +39,33 @@ img {
 
 .base-container {
   display: grid;
-  grid-template-rows: auto;
-  grid-template-columns: 1.5fr 1.5fr 0.5fr 1.5fr 1.5fr;
+  grid-template-rows: 100%;
+  /* grid-template-columns: 23.5% 23.5% 6% 23.5% 23.5%; */
+  grid-template-columns: 1fr 1fr 0.3fr 1fr 1fr;
   grid-template-areas: "position-left card-1 empty card-2 position-right";
   align-items: center;
   justify-items: center;
-  margin: 1%;
-  height: 80%;
-  width: 76%;
+  /* margin: 1%; */
+  height: 100%;
+  width: 100%;
+  /* gap: 1%;xs */
+
+  background-image: url("../art/base_bg.png");
+  background-repeat: no-repeat;
+  background-size: 95% 100%;
+  background-position: center;
+  filter: drop-shadow(0px 0px 10px);
+}
+
+.element-container {
+  height: 100%;
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  align-content: center;
 }
 
 .card-1 {
@@ -75,6 +95,7 @@ img {
   image-rendering: pixelated;
   background-repeat: no-repeat;
   background-size: contain;
+  background-position: center;
   filter: drop-shadow(5px 5px 10px);
 }
 
@@ -205,12 +226,14 @@ label {
 }
 
 .card {
+  flex-grow: 0.7;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  width: 90%;
-  height: 90%;
+
+  width: 75%;
+  height: 50%;
   border-radius: 20px;
   padding: 2px;
   box-sizing: border-box;
@@ -219,32 +242,39 @@ label {
   image-rendering: pixelated;
   background-repeat: no-repeat;
   background-size: contain;
+  background-position: center;
 
   filter: drop-shadow(0px 0px 5px);
+
+  container-type: size;
 }
 
 .card-info {
+  width: 70cqw;
+  height: 59cqh;
+
   display: flex;
   align-items: center;
-  gap: 5%;
+
   flex-direction: column;
-  flex-grow: 1;
-  width: 90%;
+  justify-content: space-between;
+  /* flex-grow: 0.5; */
 }
 
 .card-points {
   width: 60%;
-  margin-top: 22%;
+  /* margin-top: 22%; */
+  /* margin-top: 14%; */
   margin-bottom: 1%;
   align-items: center;
 
   display: flex;
   flex-direction: column;
-  flex-grow: 0.2;
-  justify-content: space-around;
+  /* flex-grow: 0.2; */
+  /* justify-content: space-around; */
 
   font-weight: 500;
-  font-size: 4em;
+  font-size: 3.5em;
 
   background-image: url("../art/card_points_bg.PNG");
   background-repeat: no-repeat;
@@ -263,7 +293,8 @@ label {
   margin: 0;
   padding-left: 5%;
   padding-right: 5%;
-  padding-top: 4%;
+  padding-top: 2%;
+  padding-bottom: 3%;
 
   font-size: 1.6em;
   font-weight: 400;
@@ -286,6 +317,7 @@ label {
 .buttons {
   width: 90%;
   height: 10%;
+  /* margin-bottom: 12%; */
   display: inline-flex;
   justify-content: space-between;
 }
@@ -309,8 +341,11 @@ button {
 }
 
 #points_remaining {
+  height: 10%;
+  width: 10%;
   padding: 1.1%;
   margin-bottom: 1%;
+  margin-top: 1.5%;
 
   box-sizing: content-box;
   font-weight: 400;
@@ -324,6 +359,10 @@ button {
   image-rendering: pixelated;
 
   filter: drop-shadow(1px 1px 5px);
+}
+
+#points_remaining > * {
+  font-size: 1.5rem;
 }
 
 p {
