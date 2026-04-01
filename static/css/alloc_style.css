@@ -24,6 +24,12 @@ body {
   align-items: center;
   width: 100%;
   height: 50%;
+
+  background-image: url("../art/base_bg.png");
+  background-repeat: no-repeat;
+  background-size: 95% 100%;
+  background-position: center;
+  filter: drop-shadow(0px 0px 10px);
 }
 
 .base-bg > * {
@@ -47,20 +53,14 @@ img {
   display: grid;
   grid-template-rows: 100%;
   /* grid-template-columns: 23.5% 23.5% 6% 23.5% 23.5%; */
-  grid-template-columns: 1fr 0.7fr 0.2fr 0.7fr 1fr;
+  grid-template-columns: 0.7fr 0.7fr 0.2fr 0.7fr 0.7fr;
   grid-template-areas: "position-left card-1 empty card-2 position-right";
   align-items: center;
   justify-items: center;
   /* margin: 1%; */
   height: 100%;
-  width: 100%;
+  width: 90%;
   /* gap: 1%;xs */
-
-  background-image: url("../art/base_bg.png");
-  background-repeat: no-repeat;
-  background-size: 95% 100%;
-  background-position: center;
-  filter: drop-shadow(0px 0px 10px);
 }
 
 .element-container {
@@ -93,26 +93,28 @@ img {
 .m-container {
   display: flex;
   justify-content: space-around;
-  align-items: start;
-  height: 85%;
+  align-items: center;
+  height: 57%;
   width: 100%;
+  padding-top: 14%;
+  padding-bottom: 6%;
 
   background-image: url("../art/m_base_bg_2.PNG");
   image-rendering: pixelated;
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: 90% 100%;
   background-position: center;
-  filter: drop-shadow(5px 5px 10px);
+  filter: drop-shadow(0px 0px 5px);
 }
 
 dl {
-  width: 82%;
-  height: 80%;
+  width: 15.5vw;
+  /* height: 24.5em; */
+  height: 42vh;
   overflow: auto;
-  border-radius: 10px;
   margin: 0;
-  margin-top: 15%;
-  /* margin-bottom: 5%; */
+  border-radius: 10px;
+  /* margin-top: 3.6em; */
 }
 
 ::-webkit-scrollbar {
@@ -124,26 +126,30 @@ dl {
 } */
 
 dd {
+  box-sizing: content-box;
+  align-self: center;
+  justify-self: center;
   margin: 0;
-  height: 20%;
+  /* margin-top: 4%; */
+  height: 18%;
   width: 100%;
+  padding-top: 8%;
 
-  filter: drop-shadow(0px 0px 0px);
+  filter: drop-shadow(0px 0px 1px);
 }
 
 .multiplier-field {
-  box-sizing: border-box;
   align-items: center;
 
   height: 100%;
   width: 100%;
-  margin-top: 4.9%;
-  margin-bottom: 4.9%;
-  padding: 2px;
+  /* margin-top: 4.9%;
+  margin-bottom: 4.9%; */
 
   image-rendering: pixelated;
   background-repeat: no-repeat;
   background-size: contain;
+  background-position: center;
 }
 .positive {
   background-image: url("../art/m_info_pos_bg.png");
@@ -161,10 +167,11 @@ dd {
 
 label {
   display: grid;
-  grid-template-columns: 30% 65%;
+  grid-template-columns: 30% 70%;
   grid-template-rows: 100%;
   grid-template-areas: "m-value m-info";
   height: 100%;
+  cursor: pointer;
 }
 
 .m-value {
@@ -173,13 +180,14 @@ label {
 
   height: 100%;
   width: 100%;
-  margin-left: 10%;
+  /* margin-left: 4%; */
 
   font-size: 1.5rem;
-  background-image: url("../art/m_value_bg.PNG");
+  background-image: url("../art/m_value_bg_2.PNG");
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
+  image-rendering: pixelated;
 
   filter: drop-shadow(0px 0px 2px);
 }
@@ -189,45 +197,39 @@ label {
 }
 
 .m-info {
-  justify-items: end;
-  align-self: center;
-
-  height: 80%;
-  width: 100%;
-  margin-left: 6%;
-}
-
-.info {
-  margin-right: 2%;
-  padding-top: 2%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 
   height: 100%;
-  width: 100%;
+  width: 93%;
+  gap: 2%;
+  margin-left: 6%;
+  margin-right: 2%;
 
-  background-image: url("../art/m_desc_bg.PNG");
+  background-image: url("../art/m_desc_bg_2.PNG");
   background-repeat: no-repeat;
   background-size: contain;
-  background-position: right;
+  background-position: center;
+  image-rendering: pixelated;
 
   filter: drop-shadow(0px 0px 2px);
 }
 
-.info > * {
-  width: 92%;
+.m-info > * {
+  width: 86%;
+  margin: 0;
   text-align: end;
 }
 
 .m-name {
-  margin: 0;
-  margin-right: 5%;
   font-weight: 400;
-  font-size: 1.2em;
+  font-size: 1.5rem;
 }
 
 .m-description {
-  margin-top: 1%;
   font-weight: 200;
-  font-size: 0.8em;
+  font-size: 0.8rem;
   opacity: 0.3;
 }
 
@@ -253,19 +255,6 @@ label {
   container-type: size;
 }
 
-/* старый вариант */
-/* .card-info {
-  width: 70cqw;
-  height: 59cqh;
-
-  display: flex;
-  align-items: center;
-
-  flex-direction: column;
-  justify-content: space-between;
-  /* flex-grow: 0.5; 
-} */
-
 .card-info {
   display: grid;
   grid-template-rows: 1fr 0.5fr 0.4fr;
@@ -276,7 +265,6 @@ label {
     "plus minus";
   align-items: center;
   justify-items: center;
-  /* row-gap: 5%; */
 
   width: 73cqw;
   height: 45cqh;

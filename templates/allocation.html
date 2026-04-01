@@ -15,13 +15,10 @@
 
   <body>
     <div id="points_remaining">
-      <p>Points left: </p>
+      <p>Points left:</p>
       <p>{{points_remaining}}</p>
     </div>
     <div class="base-bg">
-      {% comment %} <div class="img-container">
-        <img src="{% static "art/base_bg.png" %}" alt="" />
-      </div> {% endcomment %}
       <div class="base-container">
         <div class="element-container position-left">
           <div class="m-container">
@@ -51,15 +48,13 @@
                   <label for="left-card-{{multiplier.id}}">
                     <div class="m-value">
                       <p class="value">
-                        {% if multiplier.is_positive %} + {% else %} - {% endif %}
+                        {% if multiplier.is_positive %} + {% else %} - {%endif%}
                         {{multiplier.value }}
                       </p>
                     </div>
                     <div class="m-info">
-                      <div class="info">
-                        <p class="m-name">{{multiplier.name}}</p>
-                        <p class="m-description">{{ multiplier.description }}.</p>
-                      </div>
+                      <p class="m-name">{{multiplier.name}}</p>
+                      <p class="m-description">{{ multiplier.description }}.</p>
                     </div>
                   </label>
                 </form>
@@ -106,15 +101,13 @@
                   <label for="right-card-{{multiplier.id}}">
                     <div class="m-value">
                       <p class="value">
-                        {% if multiplier.is_positive %} + {% else %} - {% endif %}
+                        {% if multiplier.is_positive %} + {% else %} - {%endif%}
                         {{multiplier.value }}
                       </p>
                     </div>
                     <div class="m-info">
-                      <div class="info">
-                        <h3 class="m-name">{{multiplier.name}}</h3>
-                        <p class="m-description">{{ multiplier.description }}.</p>
-                      </div>
+                      <h3 class="m-name">{{multiplier.name}}</h3>
+                      <p class="m-description">{{ multiplier.description }}.</p>
                     </div>
                   </label>
                 </form>
