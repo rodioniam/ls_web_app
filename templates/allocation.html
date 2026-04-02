@@ -120,7 +120,11 @@
       <div class="reset-container">
         <form action="{% url 'reset_points' session.id%}" method="post">
           {% csrf_token %}
-          <input type="submit" value="Reset points" />
+          <input
+            type="submit"
+            value="Reset points"
+            class="reset-points-button"
+          />
         </form>
       </div>
     </div>

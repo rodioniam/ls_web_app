@@ -2,6 +2,10 @@ html {
   font-size: clamp(0.5vw, 0.8vw, 1vw);
 }
 
+p {
+  margin: 0;
+}
+
 body {
   min-height: 90vh;
 
@@ -52,15 +56,12 @@ img {
 .base-container {
   display: grid;
   grid-template-rows: 100%;
-  /* grid-template-columns: 23.5% 23.5% 6% 23.5% 23.5%; */
   grid-template-columns: 0.7fr 0.7fr 0.2fr 0.7fr 0.7fr;
   grid-template-areas: "position-left card-1 empty card-2 position-right";
   align-items: center;
   justify-items: center;
-  /* margin: 1%; */
   height: 100%;
   width: 90%;
-  /* gap: 1%;xs */
 }
 
 .element-container {
@@ -109,28 +110,34 @@ img {
 
 dl {
   width: 15.5vw;
-  /* height: 24.5em; */
   height: 42vh;
   overflow: auto;
   margin: 0;
   border-radius: 10px;
-  /* margin-top: 3.6em; */
 }
 
 ::-webkit-scrollbar {
-  width: 0px;
+  width: 1em;
 }
 
-/* ::-webkit-scrollbar-thumb {
-  background: none;
-} */
+::-webkit-scrollbar-track {
+  background: transparent;
+  /* margin-block: 1em; */
+}
+
+::-webkit-scrollbar-thumb {
+  /* background: brown; */
+  background-image: url("../art/m_value_bg.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
 
 dd {
   box-sizing: content-box;
   align-self: center;
   justify-self: center;
   margin: 0;
-  /* margin-top: 4%; */
   height: 18%;
   width: 100%;
   padding-top: 8%;
@@ -143,8 +150,6 @@ dd {
 
   height: 100%;
   width: 100%;
-  /* margin-top: 4.9%;
-  margin-bottom: 4.9%; */
 
   image-rendering: pixelated;
   background-repeat: no-repeat;
@@ -180,7 +185,6 @@ label {
 
   height: 100%;
   width: 100%;
-  /* margin-left: 4%; */
 
   font-size: 1.5rem;
   background-image: url("../art/m_value_bg.PNG");
@@ -257,7 +261,7 @@ label {
 
 .card-info {
   display: grid;
-  grid-template-rows: 1fr 0.5fr 0.4fr;
+  grid-template-rows: 11em 5.5em 4.5em;
   grid-template-columns: auto;
   grid-template-areas:
     "card-points card-points"
@@ -267,7 +271,6 @@ label {
   justify-items: center;
 
   width: 73cqw;
-  height: 45cqh;
 }
 
 .card-info > * {
@@ -385,16 +388,38 @@ button {
   filter: drop-shadow(1px 1px 5px);
 }
 
-#points_remaining > * {
-  font-size: 1.5rem;
-}
-
-p {
-  margin: 0;
-}
-
 .reset-container {
+  display: flex;
+  align-content: center;
+  flex-wrap: wrap;
+  justify-content: center;
   align-self: end;
-  margin: 2%;
-  filter: drop-shadow(0px 0px);
+  margin: 1.5%;
+
+  height: 8%;
+  width: 10%;
+}
+
+.reset-container > * {
+  height: 100%;
+  width: 80%;
+}
+
+input[type="submit"].reset-points-button {
+  background-color: transparent;
+  border: none;
+  font-family: inherit;
+  font-size: 1.1rem;
+
+  height: 100%;
+  width: 100%;
+  padding: 0;
+
+  background-image: url("../art/points_counter_bg.PNG");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+
+  filter: drop-shadow(0px 0px 5px);
+  cursor: pointer;
 }
