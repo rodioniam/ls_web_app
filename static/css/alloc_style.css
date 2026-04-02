@@ -183,7 +183,7 @@ label {
   /* margin-left: 4%; */
 
   font-size: 1.5rem;
-  background-image: url("../art/m_value_bg_2.PNG");
+  background-image: url("../art/m_value_bg.PNG");
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
@@ -207,7 +207,7 @@ label {
   margin-left: 6%;
   margin-right: 2%;
 
-  background-image: url("../art/m_desc_bg_2.PNG");
+  background-image: url("../art/m_desc_bg.PNG");
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
