@@ -56,7 +56,7 @@ img {
 .base-container {
   display: grid;
   grid-template-rows: 100%;
-  grid-template-columns: 0.7fr 0.7fr 0.2fr 0.7fr 0.7fr;
+  grid-template-columns: 0.75fr 0.7fr 0.2fr 0.7fr 0.75fr;
   grid-template-areas: "position-left card-1 empty card-2 position-right";
   align-items: center;
   justify-items: center;
@@ -109,7 +109,7 @@ img {
 }
 
 dl {
-  width: 15.5vw;
+  width: 16.5vw;
   height: 42vh;
   overflow: auto;
   margin: 0;
