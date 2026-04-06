@@ -25,9 +25,7 @@
             <dl>
               {% for multiplier in multipliers %}
               <dd>
-                <form
-                  class="multiplier-field {% if multiplier.is_positive%}positive{% else %}negative{%endif%}"
-                >
+                <form class="multiplier-field">
                   {% csrf_token %}
                   <input type="hidden" name="card_id" value="{{card_1.id}}" />
                   <input
@@ -45,7 +43,10 @@
                     hx-swap="outerHTML"
                     hx-include="closest form"
                   />
-                  <label for="left-card-{{multiplier.id}}">
+                  <label
+                    for="left-card-{{multiplier.id}}"
+                    class="{% if multiplier.is_positive%}positive{% else %}negative{%endif%}"
+                  >
                     <div class="m-value">
                       <p class="value">
                         {% if multiplier.is_positive %} + {% else %} - {%endif%}
@@ -78,9 +79,7 @@
             <dl>
               {% for multiplier in multipliers %}
               <dd>
-                <form
-                  class="multiplier-field {% if multiplier.is_positive%}positive{% else %}negative{%endif%}"
-                >
+                <form class="multiplier-field">
                   {% csrf_token %}
                   <input type="hidden" name="card_id" value="{{card_2.id}}" />
                   <input
@@ -98,7 +97,10 @@
                     hx-swap="outerHTML"
                     hx-include="closest form"
                   />
-                  <label for="right-card-{{multiplier.id}}">
+                  <label
+                    for="right-card-{{multiplier.id}}"
+                    class="{% if multiplier.is_positive%}positive{% else %}negative{%endif%}"
+                  >
                     <div class="m-value">
                       <p class="value">
                         {% if multiplier.is_positive %} + {% else %} - {%endif%}

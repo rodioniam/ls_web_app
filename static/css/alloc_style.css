@@ -31,7 +31,7 @@ body {
 
   background-image: url("../art/base_bg.png");
   background-repeat: no-repeat;
-  background-size: 95% 100%;
+  background-size: 100% 100%;
   background-position: center;
   filter: drop-shadow(0px 0px 10px);
 }
@@ -143,6 +143,31 @@ dd {
   padding-top: 8%;
 
   filter: drop-shadow(0px 0px 1px);
+
+  animation-name: idleCombo;
+  animation-duration: 5s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: reverse;
+  /* animation-delay: 1s; */
+}
+
+dd:hover {
+  /* animation-duration: 10s; */
+  animation: none;
+  scale: 0.99;
+}
+
+label:hover > * {
+  scale: 1.02;
+  filter: drop-shadow(0px 0px 5px);
+  /* animation: hoverRotation 2s ease-in-out infinite; */
+}
+label:hover > .m-value {
+  animation: hoverRotation 2s ease-in-out infinite;
+}
+label:hover > .m-info {
+  animation: hoverRotation 2.3s ease-in-out infinite;
 }
 
 .multiplier-field {
@@ -150,17 +175,6 @@ dd {
 
   height: 100%;
   width: 100%;
-
-  image-rendering: pixelated;
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
-}
-.positive {
-  background-image: url("../art/m_info_pos_bg.png");
-}
-.negative {
-  background-image: url("../art/m_info_neg_bg.png");
 }
 
 [type="checkbox"] {
@@ -176,7 +190,26 @@ label {
   grid-template-rows: 100%;
   grid-template-areas: "m-value m-info";
   height: 100%;
+  width: 100%;
   cursor: pointer;
+
+  image-rendering: pixelated;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+.positive {
+  background-image: url("../art/m_info_pos_bg.png");
+}
+.negative {
+  background-image: url("../art/m_info_neg_bg.png");
+}
+
+input[type="checkbox"]:checked + .positive {
+  background-color: #93e693;
+}
+input[type="checkbox"]:checked + .negative {
+  background-color: #e36f46;
 }
 
 .m-value {
@@ -257,6 +290,22 @@ label {
   filter: drop-shadow(0px 0px 5px);
 
   container-type: size;
+
+  animation-name: idle;
+  animation-duration: 3s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+.card:hover {
+  animation-name: hoverOverScale, hoverOverMove;
+  animation-duration: 1s, 2s;
+  animation-timing-function: ease-out, ease-in-out;
+  animation-iteration-count: 1, infinite;
+  animation-fill-mode: both;
+  animation-direction: normal, normal;
+
+  filter: drop-shadow(0px 0px 10px);
 }
 
 .card-info {
@@ -296,6 +345,8 @@ label {
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
+
+  animation: idleRotation 5s ease-in-out infinite;
 }
 
 .card-name {
@@ -315,6 +366,8 @@ label {
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
+
+  animation: idleCombo 5s ease-in-out infinite;
 }
 .long {
   width: 70%;
@@ -352,8 +405,20 @@ label {
   grid-area: plus;
 }
 
+.plus:hover {
+  animation: hoverRotation 2s ease-in-out infinite;
+  scale: 1.1;
+  filter: drop-shadow(0px 0px 10px);
+}
+
 .minus {
   grid-area: minus;
+}
+
+.minus:hover {
+  animation: hoverRotation 2s ease-in-out infinite;
+  scale: 1.1;
+  filter: drop-shadow(0px 0px 10px);
 }
 
 button {
@@ -425,4 +490,90 @@ input[type="submit"].reset-points-button {
   padding: 0;
 
   cursor: pointer;
+}
+
+/* ANIMATION */
+
+@keyframes idle {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+@keyframes idleRotation {
+  0% {
+    rotate: -1.5deg;
+  }
+  25% {
+    rotate: 0;
+  }
+  50% {
+    rotate: 1.5deg;
+  }
+  75% {
+    rotate: 0;
+  }
+  100% {
+    rotate: -1.5deg;
+  }
+}
+@keyframes idleCombo {
+  0% {
+    scale: 1;
+  }
+  50% {
+    scale: 0.95;
+  }
+  100% {
+    scale: 1;
+  }
+}
+
+@keyframes hoverRotation {
+  0% {
+    rotate: -1.5deg;
+  }
+  25% {
+    rotate: 0;
+  }
+  50% {
+    rotate: 1.5deg;
+  }
+  75% {
+    rotate: 0;
+  }
+  100% {
+    rotate: -1.5deg;
+  }
+}
+
+@keyframes hoverOverScale {
+  0% {
+    scale: 1;
+  }
+
+  100% {
+    scale: 1.1;
+  }
+}
+@keyframes hoverOverMove {
+  0% {
+    transform: translateY(0px);
+    /* rotate: -1deg; */
+  }
+
+  50% {
+    transform: translateY(-5px);
+    /* rotate: 1deg; */
+  }
+
+  100% {
+    transform: translateY(0px);
+    /* rotate: -1deg; */
+  }
 }
