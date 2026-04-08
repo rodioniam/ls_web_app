@@ -346,7 +346,10 @@ input[type="checkbox"]:checked + .negative {
   background-size: contain;
   background-position: center;
 
-  animation: idleRotation 5s ease-in-out infinite;
+  animation: idleRotation, pop;
+  animation-duration: 5s, 0.3s;
+  animation-timing-function: ease-in-out, ease;
+  animation-iteration-count: infinite, 1;
 }
 
 .card-name {
@@ -367,7 +370,7 @@ input[type="checkbox"]:checked + .negative {
   background-position: center;
   background-size: contain;
 
-  animation: idleCombo 5s ease-in-out infinite;
+  animation: idleRotation 2s ease-in-out infinite;
 }
 .long {
   width: 70%;
@@ -403,20 +406,24 @@ input[type="checkbox"]:checked + .negative {
 
 .plus {
   grid-area: plus;
+
+  animation: idleCombo 3s ease-in-out infinite;
 }
 
 .plus:hover {
-  animation: hoverRotation 2s ease-in-out infinite;
+  animation: hoverOverScale 1s ease-in-out infinite;
   scale: 1.1;
   filter: drop-shadow(0px 0px 10px);
 }
 
 .minus {
   grid-area: minus;
+
+  animation: idleCombo 3s ease-in-out infinite;
 }
 
 .minus:hover {
-  animation: hoverRotation 2s ease-in-out infinite;
+  animation: hoverOverScale 1s ease-in-out infinite;
   scale: 1.1;
   filter: drop-shadow(0px 0px 10px);
 }
@@ -451,6 +458,8 @@ button {
   image-rendering: pixelated;
 
   filter: drop-shadow(1px 1px 5px);
+
+  animation: popLess 0.2s ease 0.1s 1;
 }
 
 .reset-container {
@@ -471,6 +480,19 @@ button {
   background-position: center;
 
   filter: drop-shadow(0px 0px 5px);
+
+  animation: idleCombo 3s ease-in-out infinite;
+}
+
+.reset-container:hover {
+  animation-name: hoverOverScale;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
+  animation-direction: normal;
+
+  filter: drop-shadow(0px 0px 10px);
 }
 
 .reset-container > * {
@@ -564,16 +586,37 @@ input[type="submit"].reset-points-button {
 @keyframes hoverOverMove {
   0% {
     transform: translateY(0px);
-    /* rotate: -1deg; */
   }
 
   50% {
     transform: translateY(-5px);
-    /* rotate: 1deg; */
   }
 
   100% {
     transform: translateY(0px);
-    /* rotate: -1deg; */
+  }
+}
+
+@keyframes pop {
+  0% {
+    scale: 1;
+  }
+  50% {
+    scale: 1.3;
+  }
+  100% {
+    scale: 1;
+  }
+}
+
+@keyframes popLess {
+  0% {
+    scale: 1;
+  }
+  50% {
+    scale: 1.1;
+  }
+  100% {
+    scale: 1;
   }
 }
