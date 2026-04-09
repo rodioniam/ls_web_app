@@ -1,20 +1,249 @@
+html {
+  font-size: clamp(0.5vw, 0.8vw, 1vw);
+}
+
 body {
-  background-color: black;
+  min-height: 90vh;
+
   display: flex;
-  justify-content: center;
-  height: 100vh;
+  flex-direction: column;
+  justify-content: space-evenly;
   align-items: center;
+  cursor: default;
+
+  font-family: "Pixelify Sans", sans-serif;
+  background-image: url("../art/main_bg.png");
+  image-rendering: pixelated;
+  background-size: 50% 50%;
 }
 
 .form-container {
-  background-color: white;
-  border-radius: 10%;
+  display: grid;
+  grid-template-areas:
+    "name-your-cards"
+    "elements";
+  grid-template-rows: 16em 35em;
+
+  height: 100%;
+  width: 50%;
+
+  gap: 2em;
+  align-items: center;
+  justify-items: center;
+
+  background: url("../art/home_container_bg.PNG") no-repeat center;
+  background-size: contain;
+}
+
+.name-your-cards {
+  height: 100%;
+  width: 70%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+
+  background-image: url("../art/home_form_bg.PNG");
+  image-rendering: pixelated;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+
+  grid-area: name-your-cards;
+
+  animation: idleRotation 3s ease-in-out infinite;
+}
+
+.card-name {
+  box-sizing: content-box;
+  padding: 5%;
+  margin: 0;
+  margin-block: 3rem;
+  height: 100%;
+  width: 100%;
   text-align: center;
-  padding: 10px;
-  display: inline;
+
+  font-size: 4rem;
+}
+
+.elements {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+
+  height: 100%;
+  width: 100%;
+
+  grid-area: elements;
+}
+
+form {
+  height: 100%;
+  width: 80%;
+  justify-items: center;
+
+  gap: 4%;
+
+  display: grid;
+  grid-template-areas:
+    "first-card second-card"
+    "submit-button submit-button";
+
+  grid-template-columns: auto;
+  grid-template-rows: 2fr 1fr;
+
+  align-items: center;
+  justify-items: center;
+}
+
+.first-card {
+  grid-area: first-card;
+}
+.second-card {
+  grid-area: second-card;
+}
+
+.name-form {
+  display: grid;
+  grid-template-areas:
+    "label-card"
+    "card-name-input";
+
+  grid-template-rows: 2.5fr 2fr;
+  grid-template-columns: 1fr;
+
+  align-items: center;
+  justify-items: center;
+
+  height: 100%;
+  width: 100%;
+  margin-block: 2%;
 }
 
 .label-card {
-  text-align: left !important;
-  display: block;
+  margin: 0;
+  font-size: 2.9rem;
+  height: 100%;
+  width: 75%;
+
+  display: flex;
+  align-content: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  cursor: default;
+
+  background-image: url("../art/home_name_bg.PNG");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+
+  grid-area: label-card;
+}
+
+input[type="text"] {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  text-align: center;
+
+  font-family: inherit;
+  font-size: 3rem;
+  cursor: pointer;
+
+  height: 100%;
+  width: 100%;
+
+  background-image: url("../art/home_form_bg.PNG");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+
+  grid-area: card-name-input;
+}
+
+input[type="text"]:focus {
+  outline: none;
+}
+
+input[type="submit"] {
+  margin: 0.5%;
+  height: 70%;
+  width: 40%;
+
+  font-family: inherit;
+  font-size: 4rem;
+  cursor: pointer;
+
+  background-color: transparent;
+  border: none;
+
+  background-image: url("../art/points_counter_bg.PNG");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+
+  grid-area: submit-button;
+}
+
+.label-card,
+.card-name-input,
+.submit-button {
+  animation: idleCombo 3s ease-in-out infinite;
+}
+
+.card-name-input:hover,
+.submit-button:hover {
+  animation: hoverOverScale 1s ease-out 1 both normal;
+  filter: drop-shadow(0px 0px 10px);
+}
+
+.name-your-cards,
+.label-card,
+.card-name-input,
+.submit-button {
+  filter: drop-shadow(0px 0px 5px);
+}
+
+/* ANIMATION */
+
+@keyframes idleCombo {
+  0% {
+    scale: 1;
+  }
+  50% {
+    scale: 0.95;
+  }
+  100% {
+    scale: 1;
+  }
+}
+
+@keyframes idleRotation {
+  0% {
+    rotate: -1.5deg;
+  }
+  25% {
+    rotate: 0;
+  }
+  50% {
+    rotate: 1.5deg;
+  }
+  75% {
+    rotate: 0;
+  }
+  100% {
+    rotate: -1.5deg;
+  }
+}
+
+@keyframes hoverOverScale {
+  0% {
+    scale: 1;
+  }
+
+  100% {
+    scale: 1.1;
+  }
 }

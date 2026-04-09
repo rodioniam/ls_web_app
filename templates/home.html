@@ -5,33 +5,49 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="{% static 'css/home_style.css'%}" />
   </head>
   <body>
     <div class="form-container">
-      <p>Name your cards!</p>
-      <form action="" method="post">
-        <label for="fcard" class="label-card">First card:</label>
-        <input
-          type="text"
-          id="fcard"
-          name="fcard"
-          maxlength="10"
-          placeholder="max 10 chars."
-          required
-        /><br />
-        <label for="scard" class="label-card">Second card:</label>
-        <input
-          type="text"
-          id="scard"
-          name="scard"
-          maxlength="10"
-          placeholder="max 10 chars."
-          required
-        /><br />
-        {% csrf_token %}
-        <input type="submit" value="Submit" />
-      </form>
+      <div class="name-your-cards">
+        <p class="card-name">Name your cards!</p>
+      </div>
+      <div class="elements">
+        <form action="" method="post">
+          <div class="name-form first-card">
+            <p class="label-card">Card № 1</p>
+            <input
+              type="text"
+              class="card-name-input"
+              id="fcard"
+              name="fcard"
+              maxlength="10"
+              placeholder="max 10 chars."
+              autocomplete="off"
+              required
+            />
+          </div>
+          <div class="name-form second-card">
+            <p class="label-card">Card № 2</p>
+            <input
+              type="text"
+              class="card-name-input"
+              id="scard"
+              name="scard"
+              maxlength="10"
+              placeholder="max 10 chars."
+              autocomplete="off"
+              required
+            />
+          </div>
+          {% csrf_token %}
+          <input type="submit" value="Start!" class="submit-button" />
+        </form>
+      </div>
     </div>
   </body>
 </html>
