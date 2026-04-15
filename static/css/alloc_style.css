@@ -101,7 +101,7 @@ img {
   padding-top: 14%;
   padding-bottom: 6%;
 
-  background-image: url("../art/m_base_bg.PNG");
+  background-image: url("../art/m_base_bg.png");
   image-rendering: pixelated;
   background-repeat: no-repeat;
   background-size: 90% 100%;
@@ -218,7 +218,7 @@ input[type="checkbox"]:checked + .negative {
   width: 100%;
 
   font-size: 1.5rem;
-  background-image: url("../art/m_value_bg.PNG");
+  background-image: url("../art/m_value_bg.png");
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
@@ -242,7 +242,7 @@ input[type="checkbox"]:checked + .negative {
   margin-left: 6%;
   margin-right: 2%;
 
-  background-image: url("../art/m_desc_bg.PNG");
+  background-image: url("../art/m_desc_bg.png");
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
@@ -389,7 +389,7 @@ input[type="checkbox"]:checked + .negative {
   align-content: center;
   flex-wrap: wrap;
 
-  background-image: url("../art/card_button_bg.PNG");
+  background-image: url("../art/card_button_bg.png");
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
