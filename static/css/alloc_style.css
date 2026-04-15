@@ -102,7 +102,6 @@ img {
   padding-bottom: 6%;
 
   background-image: url("../art/m_base_bg.png");
-  image-rendering: pixelated;
   background-repeat: no-repeat;
   background-size: 90% 100%;
   background-position: center;
@@ -280,7 +279,6 @@ input[type="checkbox"]:checked + .negative {
   box-sizing: border-box;
 
   background-image: url("../art/card_base.png");
-  image-rendering: pixelated;
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
