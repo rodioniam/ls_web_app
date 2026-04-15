@@ -16,8 +16,6 @@ represent anyone or anything. Once you've split the points, you can apply bonus
 and penalty modifiers to each card (e.g. *+0.5 for being kind today*, 
 *−0.8 for scratching the couch*) and see the final score at the end of the day.
 
-It's simple, lighthearted, and surprisingly fun.
-
 ## Tech Stack
 
 - **Python / Django** - backend framework
