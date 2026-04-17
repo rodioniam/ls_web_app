@@ -1,0 +1,62 @@
+[
+{
+  "model": "allocator.multiplier",
+  "pk": 1,
+  "fields": {
+    "name": "stinky",
+    "value": 0.6,
+    "description": "you were stinky",
+    "is_positive": false
+  }
+},
+{
+  "model": "allocator.multiplier",
+  "pk": 2,
+  "fields": {
+    "name": "cute",
+    "value": 0.9,
+    "description": "you were cute",
+    "is_positive": true
+  }
+},
+{
+  "model": "allocator.multiplier",
+  "pk": 3,
+  "fields": {
+    "name": "productive",
+    "value": 1.0,
+    "description": "you did a lot today!",
+    "is_positive": true
+  }
+},
+{
+  "model": "allocator.multiplier",
+  "pk": 4,
+  "fields": {
+    "name": "lazy",
+    "value": 0.3,
+    "description": "you were lazy",
+    "is_positive": false
+  }
+},
+{
+  "model": "allocator.multiplier",
+  "pk": 5,
+  "fields": {
+    "name": "fancy",
+    "value": 1.5,
+    "description": "you were fancy",
+    "is_positive": true
+  }
+},
+{
+  "model": "allocator.multiplier",
+  "pk": 6,
+  "fields": {
+    "name": "rude",
+    "value": 1.0,
+    "description": "you were rude",
+    "is_positive": false
+  }
+}
+]
