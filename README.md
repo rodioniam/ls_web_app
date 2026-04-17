@@ -1,5 +1,7 @@
 # Love Score 💕
 
+Video demonstration [here](LoveScore_demo.gif) or try it your-self [here](web-production-55a72.up.railway.app)!
+
 ## About
 
 This project was born from a small daily habit I share with my girlfriend —
@@ -35,5 +37,3 @@ and penalty modifiers to each card (e.g. *+0.5 for being kind today*,
 ## Author
 
 Built by [Rodion](https://github.com/rodioniam) as a portfolio project while learning Django.
-
-Video demonstration [here](LoveScore_demo.gif).
