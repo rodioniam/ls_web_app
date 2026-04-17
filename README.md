@@ -1,6 +1,6 @@
 # Love Score 💕
 
-Video demonstration [here](LoveScore_demo.gif) or try it your-self [here](web-production-55a72.up.railway.app)!
+Video demonstration [here](LoveScore_demo.gif) or try it your-self [here](https://web-production-55a72.up.railway.app)!
 
 ## About
 
