@@ -9,7 +9,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY . .
 
 # need this to load static files via whitenoise
-RUN python manage.py collectstatic --noinput
+# RUN python manage.py collectstatic --noinput
 # RUN SECRET_KEY=temp-build-key python manage.py collectstatic --noinput
 
 EXPOSE 8000
