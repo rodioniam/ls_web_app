@@ -71,7 +71,7 @@ CSRF_TRUSTED_ORIGINS = ['https://web-production-55a72.up.railway.app']
 # Database
 # https://docs.djangoproject.com/en/6.0/ref/settings/#databases
 
-if config("DEBUG", cast=bool):
+if config("DEBUG", cast=bool, default=False):
     # local
     DATABASES = {
         'default': {
