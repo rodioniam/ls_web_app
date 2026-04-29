@@ -4,7 +4,7 @@ Video demonstration [here](LoveScore_demo.gif) or try it your-self [here](https:
 
 ## About
 
-This project was born from a small daily habit I share with my girlfriend —
+This project was born from a small daily habit I share with my girlfriend -
 throughout the day we like to ask each other "how much do you love me today?".
 Since we also have a cat, we started giving everyone a score: *"You get 4 points,
 but the cat gets 6 - you were a little mean today, and he was very sweet"*.
@@ -13,7 +13,7 @@ This playful scoring ritual inspired me to build a web app around it.
 
 ## What it does
 
-Allocator lets you distribute 10 points between two custom-named cards — they can
+App lets you distribute 10 points between two custom-named cards - they can
 represent anyone or anything. Once you've split the points, you can apply bonus
 and penalty modifiers to each card (e.g. *+0.5 for being kind today*, 
 *−0.8 for scratching the couch*) and see the final score at the end of the day.
